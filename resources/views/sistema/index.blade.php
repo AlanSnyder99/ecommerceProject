@@ -5,10 +5,10 @@
 
 					<div class="row mb-2 mb-xl-3">
 						<div class="col-auto d-none d-sm-block">
-							<h3><strong>Analytics</strong> Dashboard</h3>
+							<h3><strong>Tablero Inicial</strong></h3>
 						</div>
-
-						<div class="col-auto ml-auto text-right mt-n1">
+                        {{-- CTRL + K + C (comentar) --}}
+						{{-- <div class="col-auto ml-auto text-right mt-n1">
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">
 									<li class="breadcrumb-item"><a href="#">AdminKit</a></li>
@@ -16,11 +16,11 @@
 									<li class="breadcrumb-item active" aria-current="page">Analytics</li>
 								</ol>
 							</nav>
-						</div>
+						</div> --}}
 					</div>
-					<div class="row">
+					{{-- <div class="row">
 						<div class="col-xl-6 col-xxl-5 d-flex">
-							<div class="w-100">
+							 <div class="w-100">
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="card">
@@ -67,7 +67,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> 
 						</div>
 
 						<div class="col-xl-6 col-xxl-7">
@@ -82,10 +82,10 @@
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
+						</div> 
+					</div> --}}
 
-					<div class="row">
+					{{-- <div class="row">
 						<div class="col-12 col-md-6 col-xxl-3 d-flex order-2 order-xxl-3">
 							<div class="card flex-fill w-100">
 								<div class="card-header">
@@ -146,87 +146,66 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> --}}
 
 					<div class="row">
-						<div class="col-12 col-lg-8 col-xxl-9 d-flex">
+						<div class="col-12 col-lg-12 col-xxl-12 d-flex">
 							<div class="card flex-fill">
 								<div class="card-header">
 
-									<h5 class="card-title mb-0">Latest Projects</h5>
+									<h5 class="card-title mb-0">Ventas</h5>
 								</div>
 								<table class="table table-hover my-0">
 									<thead>
 										<tr>
-											<th>Name</th>
-											<th class="d-none d-xl-table-cell">Start Date</th>
-											<th class="d-none d-xl-table-cell">End Date</th>
-											<th>Status</th>
-											<th class="d-none d-md-table-cell">Assignee</th>
+											<th>Nombre</th>
+											<th class="d-none d-xl-table-cell">Fecha De Compra</th>
+											<th class="d-none d-xl-table-cell">Fecha Finalizado</th>
+											<th>Estado</th>
+											<th class="d-none d-md-table-cell">Ver</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<td>Project Apollo</td>
+											<td>Carlos Alberto</td>
 											<td class="d-none d-xl-table-cell">01/01/2020</td>
 											<td class="d-none d-xl-table-cell">31/06/2020</td>
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">Vanessa Tucker</td>
+											<td><span class="badge bg-success">Finalizado</span></td>
+											<td class="d-none d-md-table-cell">	<button style="background: #f7f7fc;" class="btn" type="button">
+                                                Ver Pedido</button></td>
 										</tr>
 										<tr>
-											<td>Project Fireball</td>
+											<td>Juan Pablo</td>
 											<td class="d-none d-xl-table-cell">01/01/2020</td>
 											<td class="d-none d-xl-table-cell">31/06/2020</td>
-											<td><span class="badge bg-danger">Cancelled</span></td>
-											<td class="d-none d-md-table-cell">William Harris</td>
+											<td><span class="badge bg-danger">Cancelado</span></td>
+											<td class="d-none d-md-table-cell"><button style="background: #f7f7fc;" class="btn" type="button">
+                                                Ver Pedido</button></td>
 										</tr>
 										<tr>
-											<td>Project Hades</td>
+											<td>Maidana Frank</td>
 											<td class="d-none d-xl-table-cell">01/01/2020</td>
-											<td class="d-none d-xl-table-cell">31/06/2020</td>
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">Sharon Lessman</td>
-										</tr>
-										<tr>
-											<td>Project Nitro</td>
+											<td class="d-none d-xl-table-cell">--------</td>
+                                            <td><span class="badge bg-warning">En Proceso</span></td>
+											<td class="d-none d-md-table-cell"><button style="background: #f7f7fc;" class="btn" type="button">
+                                                Ver Pedido</button></td>
+                                        </tr>
+                                        <tr>
+											<td>Maidana Frank</td>
 											<td class="d-none d-xl-table-cell">01/01/2020</td>
-											<td class="d-none d-xl-table-cell">31/06/2020</td>
-											<td><span class="badge bg-warning">In progress</span></td>
-											<td class="d-none d-md-table-cell">Vanessa Tucker</td>
+											<td class="d-none d-xl-table-cell">--------</td>
+                                            <td><span class="badge bg-espera">En Espera</span></td>
+											<td class="d-none d-md-table-cell"><button style="background: #f7f7fc;" class="btn" type="button">
+                                                Ver Pedido</button></td>
 										</tr>
-										<tr>
-											<td>Project Phoenix</td>
-											<td class="d-none d-xl-table-cell">01/01/2020</td>
-											<td class="d-none d-xl-table-cell">31/06/2020</td>
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">William Harris</td>
-										</tr>
-										<tr>
-											<td>Project X</td>
-											<td class="d-none d-xl-table-cell">01/01/2020</td>
-											<td class="d-none d-xl-table-cell">31/06/2020</td>
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">Sharon Lessman</td>
-										</tr>
-										<tr>
-											<td>Project Romeo</td>
-											<td class="d-none d-xl-table-cell">01/01/2020</td>
-											<td class="d-none d-xl-table-cell">31/06/2020</td>
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">Christina Mason</td>
-										</tr>
-										<tr>
-											<td>Project Wombat</td>
-											<td class="d-none d-xl-table-cell">01/01/2020</td>
-											<td class="d-none d-xl-table-cell">31/06/2020</td>
-											<td><span class="badge bg-warning">In progress</span></td>
-											<td class="d-none d-md-table-cell">William Harris</td>
-										</tr>
+									
+								
+								
 									</tbody>
 								</table>
 							</div>
 						</div>
-						<div class="col-12 col-lg-4 col-xxl-3 d-flex">
+						{{-- <div class="col-12 col-lg-4 col-xxl-3 d-flex">
 							<div class="card flex-fill w-100">
 								<div class="card-header">
 
@@ -238,7 +217,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> --}}
 					</div>
 
 				</div>

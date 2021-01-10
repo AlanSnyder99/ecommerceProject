@@ -21,45 +21,45 @@
 		<nav id="sidebar" class="sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="/admin/home">
-          <span class="align-middle">AdminKit</span>
+          <span class="align-middle">E-Commerce</span>
         </a>
 
 				<ul class="sidebar-nav">
 					<li  class="sidebar-header">
-						Pages
+						Paginas
 					</li>
 
 					<li  class="sidebar-item @if(isset($currentlyPage) && $currentlyPage=="home") {{'active'}} @endif">
 						<a class="sidebar-link" href="/admin/home">
-              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Tablero Inicial</span>
             </a>
 					</li>
 
 					<li class="sidebar-item @if(isset($currentlyPage) && $currentlyPage=="perfil") {{'active'}} @endif">
 						<a class="sidebar-link" href="/admin/perfil">
-              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Perfil</span>
             </a>
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="pages-settings.html">
-              <i class="align-middle" data-feather="settings"></i> <span class="align-middle">Settings</span>
+              <i class="align-middle" data-feather="settings"></i> <span class="align-middle">Configuracion</span>
             </a>
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="pages-invoice.html">
-              <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Invoice</span>
+              <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Ventas</span>
             </a>
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="pages-blank.html">
-              <i class="align-middle" data-feather="book"></i> <span class="align-middle">Blank</span>
+              <i class="align-middle" data-feather="check-circle"></i> <span class="align-middle">Productos</span>
             </a>
 					</li>
 
-					<li class="sidebar-item">
+					<!--<li class="sidebar-item">
 						<a href="#auth" data-toggle="collapse" class="sidebar-link collapsed">
               <i class="align-middle" data-feather="users"></i> <span class="align-middle">Auth</span>
             </a>
@@ -67,12 +67,12 @@
 							<li class="sidebar-item"><a class="sidebar-link" href="pages-sign-in.html">Sign In</a></li>
 							<li class="sidebar-item"><a class="sidebar-link" href="pages-sign-up.html">Sign Up</a></li>
 						</ul>
-					</li>
+					</li> -->
 
-					<li class="sidebar-header">
+					<!--<li class="sidebar-header">
 						Tools & Components
-					</li>
-					<li class="sidebar-item">
+					</li>-->
+					<!--<li class="sidebar-item">
 						<a data-target="#ui" data-toggle="collapse" class="sidebar-link collapsed">
               <i class="align-middle" data-feather="briefcase"></i> <span class="align-middle">UI Elements</span>
             </a>
@@ -85,9 +85,9 @@
 							<li class="sidebar-item"><a class="sidebar-link" href="ui-modals.html">Modals</a></li>
 							<li class="sidebar-item"><a class="sidebar-link" href="ui-typography.html">Typography</a></li>
 						</ul>
-					</li>
+					</li>-->
 
-					<li class="sidebar-item">
+					<!--<li class="sidebar-item">
 						<a class="sidebar-link" href="icons-feather.html">
               <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Icons</span>
             </a>
@@ -107,34 +107,26 @@
 						<a class="sidebar-link" href="tables-bootstrap.html">
               <i class="align-middle" data-feather="list"></i> <span class="align-middle">Tables</span>
             </a>
-					</li>
+					</li>-->
 
 					<li class="sidebar-header">
-						Plugins & Addons
+						Complementos
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="charts-chartjs.html">
-              <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Charts</span>
+              <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Graficos</span>
             </a>
 					</li>
 
-					<li class="sidebar-item">
+					<!--<li class="sidebar-item">
 						<a class="sidebar-link" href="maps-google.html">
-              <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
+              <i class="align-middle" data-feather="map"></i> <span class="align-middle">Pedidos</span>
             </a>
-					</li>
+					</li>-->
 				</ul>
 
-				<div class="sidebar-cta">
-					<div class="sidebar-cta-content">
-						<strong class="d-inline-block mb-2">Upgrade to Pro</strong>
-						<div class="mb-3 text-sm">
-							Are you looking for more components? Check out our premium version.
-						</div>
-						<a href="https://adminkit.io/pricing" target="_blank" class="btn btn-primary btn-block">Upgrade to Pro</a>
-					</div>
-				</div>
+		
 			</div>
 		</nav>
 
@@ -146,7 +138,7 @@
 
 				<form class="d-none d-sm-inline-block">
 					<div class="input-group input-group-navbar">
-						<input type="text" class="form-control" placeholder="Search…" aria-label="Search">
+						<input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar">
 						<button class="btn" type="button">
               <i class="align-middle" data-feather="search"></i>
             </button>
@@ -164,9 +156,9 @@
 							</a>
 							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right py-0" aria-labelledby="alertsDropdown">
 								<div class="dropdown-menu-header">
-									4 New Notifications
+									4 Nuevas Notificaciones
 								</div>
-								<div class="list-group">
+							<!--	<div class="list-group">
 									<a href="#" class="list-group-item">
 										<div class="row g-0 align-items-center">
 											<div class="col-2">
@@ -214,13 +206,13 @@
 											</div>
 										</div>
 									</a>
-								</div>
+								</div>-->
 								<div class="dropdown-menu-footer">
 									<a href="#" class="text-muted">Show all notifications</a>
 								</div>
 							</div>
 						</li>
-						<li class="nav-item dropdown">
+						<!--<li class="nav-item dropdown">
 							<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-toggle="dropdown">
 								<div class="position-relative">
 									<i class="align-middle" data-feather="message-square"></i>
@@ -286,23 +278,23 @@
 									<a href="#" class="text-muted">Show all messages</a>
 								</div>
 							</div>
-						</li>
+						</li>-->
 						<li class="nav-item dropdown">
 							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-toggle="dropdown">
                 <i class="align-middle" data-feather="settings"></i>
               </a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
-                <img src="/img/avatars/avatar.jpg" class="avatar img-fluid rounded mr-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+                <img src="/img/avatars/avatar.jpg" class="avatar img-fluid rounded mr-1" alt="Charles Hall" /> <span class="text-dark">Manolo Salvaje</span>
               </a>
 							<div class="dropdown-menu dropdown-menu-right">
-								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle mr-1" data-feather="user"></i> Profile</a>
-								<a class="dropdown-item" href="#"><i class="align-middle mr-1" data-feather="pie-chart"></i> Analytics</a>
+								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle mr-1" data-feather="user"></i> Perfil</a>
+							
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="pages-settings.html"><i class="align-middle mr-1" data-feather="settings"></i> Settings & Privacy</a>
-								<a class="dropdown-item" href="#"><i class="align-middle mr-1" data-feather="help-circle"></i> Help Center</a>
+								<a class="dropdown-item" href="pages-settings.html"><i class="align-middle mr-1" data-feather="settings"></i>Privacidad</a>
+								<a class="dropdown-item" href="#"><i class="align-middle mr-1" data-feather="help-circle"></i> Ayuda</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Log out</a>
+								<a class="dropdown-item" href="#">Salir</a>
 							</div>
 						</li>
 					</ul>
@@ -318,22 +310,22 @@
 					<div class="row text-muted">
 						<div class="col-6 text-left">
 							<p class="mb-0">
-								<a href="/admin/home" class="text-muted"><strong>AdminKit Demo</strong></a> &copy;
+								<a href="/admin/home" class="text-muted"><strong>E-Commerce</strong></a> &copy;
 							</p>
 						</div>
 						<div class="col-6 text-right">
 							<ul class="list-inline">
 								<li class="list-inline-item">
-									<a class="text-muted" href="#">Support</a>
+									<a class="text-muted" href="#">Soporte</a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="#">Help Center</a>
+									<a class="text-muted" href="#">Centro De Ayuda</a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="#">Privacy</a>
+									<a class="text-muted" href="#">Privacidad</a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="#">Terms</a>
+									<a class="text-muted" href="#">Preguntas Frecuentes</a>
 								</li>
 							</ul>
 						</div>
