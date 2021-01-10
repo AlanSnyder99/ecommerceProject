@@ -171,32 +171,28 @@
 											<td class="d-none d-xl-table-cell">01/01/2020</td>
 											<td class="d-none d-xl-table-cell">31/06/2020</td>
 											<td><span class="badge bg-success">Finalizado</span></td>
-											<td class="d-none d-md-table-cell">	<button style="background: #f7f7fc;" class="btn" type="button">
-                                                Ver Pedido</button></td>
+											<td class="d-none d-md-table-cell">	<button class="btn btn-info"> + </button></td>
 										</tr>
 										<tr>
 											<td>Juan Pablo</td>
 											<td class="d-none d-xl-table-cell">01/01/2020</td>
 											<td class="d-none d-xl-table-cell">31/06/2020</td>
 											<td><span class="badge bg-danger">Cancelado</span></td>
-											<td class="d-none d-md-table-cell"><button style="background: #f7f7fc;" class="btn" type="button">
-                                                Ver Pedido</button></td>
+                                            <td class="d-none d-md-table-cell">	<button class="btn btn-info"> + </button></td>
 										</tr>
 										<tr>
 											<td>Maidana Frank</td>
 											<td class="d-none d-xl-table-cell">01/01/2020</td>
 											<td class="d-none d-xl-table-cell">--------</td>
                                             <td><span class="badge bg-warning">En Proceso</span></td>
-											<td class="d-none d-md-table-cell"><button style="background: #f7f7fc;" class="btn" type="button">
-                                                Ver Pedido</button></td>
+                                            <td class="d-none d-md-table-cell">	<button class="btn btn-info"> + </button></td>
                                         </tr>
                                         <tr>
 											<td>Maidana Frank</td>
 											<td class="d-none d-xl-table-cell">01/01/2020</td>
 											<td class="d-none d-xl-table-cell">--------</td>
                                             <td><span class="badge bg-espera">En Espera</span></td>
-											<td class="d-none d-md-table-cell"><button style="background: #f7f7fc;" class="btn" type="button">
-                                                Ver Pedido</button></td>
+                                            <td class="d-none d-md-table-cell">	<button class="btn btn-info"> + </button></td>
 										</tr>
 									
 								
