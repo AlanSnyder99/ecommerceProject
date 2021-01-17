@@ -14,6 +14,13 @@
 	<title>{{$titulo}} - {{env('APP_NAME')}}</title>
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/all.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/brands.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/fontawesome.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/regular.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/solid.min.css') }}" rel="stylesheet">
+	<script src="{{ asset('/js/jquery.min.js') }}"></script>
+	@yield('scripts')
 </head>
 
 <body>
@@ -21,42 +28,42 @@
 		<nav id="sidebar" class="sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="/admin/home">
-          <span class="align-middle">E-Commerce</span>
-        </a>
+					<span class="align-middle">E-Commerce</span>
+				</a>
 
 				<ul class="sidebar-nav">
-					<li  class="sidebar-header">
+					<li class="sidebar-header">
 						Paginas
 					</li>
 
-					<li  class="sidebar-item @if(isset($currentlyPage) && $currentlyPage=="home") {{'active'}} @endif">
+					<li class="sidebar-item @if(isset($currentlyPage) && $currentlyPage=="home") {{'active'}} @endif">
 						<a class="sidebar-link" href="/admin/home">
-              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Tablero Inicial</span>
-            </a>
+							<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Tablero Inicial</span>
+						</a>
 					</li>
 
 					<li class="sidebar-item @if(isset($currentlyPage) && $currentlyPage=="perfil") {{'active'}} @endif">
 						<a class="sidebar-link" href="/admin/perfil">
-              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Perfil</span>
-            </a>
+							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Perfil</span>
+						</a>
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="pages-settings.html">
-              <i class="align-middle" data-feather="settings"></i> <span class="align-middle">Configuracion</span>
-            </a>
+							<i class="align-middle" data-feather="settings"></i> <span class="align-middle">Configuracion</span>
+						</a>
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="pages-invoice.html">
-              <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Ventas</span>
-            </a>
+							<i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Ventas</span>
+						</a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-blank.html">
-              <i class="align-middle" data-feather="check-circle"></i> <span class="align-middle">Productos</span>
-            </a>
+						<a class="sidebar-link" href="/admin/productos">
+							<i class="align-middle" data-feather="check-circle"></i> <span class="align-middle">Productos</span>
+						</a>
 					</li>
 
 					<!--<li class="sidebar-item">
@@ -115,8 +122,8 @@
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="charts-chartjs.html">
-              <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Graficos</span>
-            </a>
+							<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Graficos</span>
+						</a>
 					</li>
 
 					<!--<li class="sidebar-item">
@@ -126,22 +133,22 @@
 					</li>-->
 				</ul>
 
-		
+
 			</div>
 		</nav>
 
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle d-flex">
-          <i class="hamburger align-self-center"></i>
-        </a>
+					<i class="hamburger align-self-center"></i>
+				</a>
 
 				<form class="d-none d-sm-inline-block">
 					<div class="input-group input-group-navbar">
 						<input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar">
 						<button class="btn" type="button">
-              <i class="align-middle" data-feather="search"></i>
-            </button>
+							<i class="align-middle" data-feather="search"></i>
+						</button>
 					</div>
 				</form>
 
@@ -158,7 +165,7 @@
 								<div class="dropdown-menu-header">
 									4 Nuevas Notificaciones
 								</div>
-							<!--	<div class="list-group">
+								<!--	<div class="list-group">
 									<a href="#" class="list-group-item">
 										<div class="row g-0 align-items-center">
 											<div class="col-2">
@@ -281,15 +288,15 @@
 						</li>-->
 						<li class="nav-item dropdown">
 							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-toggle="dropdown">
-                <i class="align-middle" data-feather="settings"></i>
-              </a>
+								<i class="align-middle" data-feather="settings"></i>
+							</a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
-                <img src="/img/avatars/avatar.jpg" class="avatar img-fluid rounded mr-1" alt="Charles Hall" /> <span class="text-dark">Manolo Salvaje</span>
-              </a>
+								<img src="/img/avatars/avatar.jpg" class="avatar img-fluid rounded mr-1" alt="Charles Hall" /> <span class="text-dark">Manolo Salvaje</span>
+							</a>
 							<div class="dropdown-menu dropdown-menu-right">
 								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle mr-1" data-feather="user"></i> Perfil</a>
-							
+
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="pages-settings.html"><i class="align-middle mr-1" data-feather="settings"></i>Privacidad</a>
 								<a class="dropdown-item" href="#"><i class="align-middle mr-1" data-feather="help-circle"></i> Ayuda</a>
@@ -301,6 +308,7 @@
 				</div>
 			</nav>
 
+			@yield('breadcrumb')
 			<main class="content">
 				@yield('contenido')
 			</main>

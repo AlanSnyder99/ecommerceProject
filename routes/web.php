@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControladorAdminHome;
 use App\Http\Controllers\ControladorAdminPerfil;
+use App\Http\Controllers\ControladorAdminProducto;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,8 @@ Route::group(array('domain'=>'127.0.0.1'),function () {
     Route::get('/admin/home', [ControladorAdminHome::class, 'index']);
 
     Route::get('/admin/perfil', [ControladorAdminPerfil::class, 'index']);
+
+    Route::get('/admin/productos', [ControladorAdminProducto::class, 'index']);
+    Route::get('/admin/productos/cargarGrilla', [ControladorAdminProducto::class, 'cargarGrilla'])->name('productos.cargarGrilla');
   
   });
