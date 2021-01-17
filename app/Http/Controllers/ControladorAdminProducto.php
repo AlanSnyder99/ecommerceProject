@@ -33,9 +33,10 @@ class ControladorAdminProducto extends Controller {
             $row[] = $aProductos[$i]->tipo;
             $row[] = number_format($aProductos[$i]->precio, "2", ",", ".");
             $row[] = $aProductos[$i]->stock;
-            $row[] = "<select class='form-control' name='lstAcciones' onclick='setAccionProducto()'>
+            $row[] = "<select class='form-control' name='lstAcciones' onclick='setAccionProducto();'>
+                        <option value='' selected disabled>Seleccionar</option>
                         <option value='eliminarProducto(".$aProductos[$i]->idproducto.")'>Eliminar producto</option>
-                        <option><a href='/admin/producto/nuevo/".$aProductos[$i]->idproducto."'>Modificar</a></option>
+                        <option value='modificarProducto(".$aProductos[$i]->idproducto.")'>Modificar</option>
                     </select>";
             $cont++;
             $data[] = $row;
