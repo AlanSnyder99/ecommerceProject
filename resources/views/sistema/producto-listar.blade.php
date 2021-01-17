@@ -2,8 +2,8 @@
 @section('titulo', $titulo)
 
 @section('scripts')
-    <link href="{{ asset('/css/datatables.min.css') }}" rel="stylesheet">
-    <script src="{{ asset('/js/datatables.min.js') }}"></script>
+    <link href="{{ asset('css/datatables.min.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/datatables.min.js') }}"></script>
 @endsection
 
 @section('breadcrumb')
