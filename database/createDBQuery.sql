@@ -1,0 +1,219 @@
+/*CREATE SCHEMA `ecommercedb` ;*/
+
+
+CREATE TABLE IF NOT EXISTS `ecommercedb`.`categoria` (
+  `idcategoria` INT NOT NULL,
+  `tipo` VARCHAR(200) NOT NULL,
+  PRIMARY KEY (`idcategoria`));
+  
+  
+CREATE TABLE IF NOT EXISTS `ecommercedb`.`localidad` (
+  `idlocalidad` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(200) NOT NULL,
+  PRIMARY KEY (`idlocalidad`));
+
+CREATE TABLE IF NOT EXISTS `ecommercedb`.`provincia` (
+  `idprovincia` INT NOT NULL,
+  `nombre` VARCHAR(200) NOT NULL,
+  PRIMARY KEY (`idprovincia`));
+
+CREATE TABLE IF NOT EXISTS `ecommercedb`.`rol` (
+  `idrol` INT NOT NULL AUTO_INCREMENT,
+  `tipo` VARCHAR(200) NOT NULL,
+  PRIMARY KEY (`idrol`));
+
+CREATE TABLE IF NOT EXISTS `ecommercedb`.`subCategoria` (
+  `idsubCategoria` INT NOT NULL AUTO_INCREMENT,
+  `tipo` VARCHAR(145) NOT NULL,
+  PRIMARY KEY (`idsubCategoria`));
+
+CREATE TABLE IF NOT EXISTS `ecommercedb`.`unidadVenta` (
+  `idunidadVenta` INT NOT NULL,
+  `tipo` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idunidadVenta`));
+  
+  CREATE TABLE IF NOT EXISTS `ecommercedb`.`domicilio` (
+  `iddomicilio` INT NOT NULL,
+  `pais` VARCHAR(100) NOT NULL,
+  `calle` VARCHAR(200) NOT NULL,
+  `numero` VARCHAR(200) NULL,
+  `departamento` VARCHAR(200) NULL,
+  `barrio` VARCHAR(200) NULL,
+  `ciudad` VARCHAR(200) NOT NULL,
+  `codigoPostal` INT NULL,
+  `fkprovincia` INT NOT NULL,
+  `fklocalidad` INT NOT NULL,
+  PRIMARY KEY (`iddomicilio`),
+  INDEX `fklocalidad_idx` (`fklocalidad` ASC),
+  INDEX `fkprovincia_idx` (`fkprovincia` ASC),
+  CONSTRAINT `fklocalidad`
+    FOREIGN KEY (`fklocalidad`)
+    REFERENCES `ecommercedb`.`localidad` (`idlocalidad`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fkprovincia`
+    FOREIGN KEY (`fkprovincia`)
+    REFERENCES `ecommercedb`.`provincia` (`idprovincia`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+CREATE TABLE IF NOT EXISTS `ecommercedb`.`cliente` (
+  `idcliente` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(145) NOT NULL,
+  `descripcion` VARCHAR(445) NULL,
+  `fkdomicilio` INT NOT NULL,
+  `telefono` VARCHAR(45) NOT NULL,
+  `habilitado` INT NULL,
+  `imagen` VARCHAR(345) NULL,
+  `tiempoEntregaEstimado` VARCHAR(245) NULL,
+  `fechaDeCreacion` DATE NOT NULL,
+  PRIMARY KEY (`idcliente`),
+  INDEX `fkdomicilio_idx` (`fkdomicilio` ASC),
+  CONSTRAINT `fkdomicilio`
+    FOREIGN KEY (`fkdomicilio`)
+    REFERENCES `ecommercedb`.`domicilio` (`iddomicilio`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+    
+    CREATE TABLE IF NOT EXISTS `ecommercedb`.`usuario` (
+  `idusuario` INT NOT NULL AUTO_INCREMENT,
+  `nombreUsuario` VARCHAR(245) NOT NULL,
+  `clave` VARCHAR(645) NOT NULL,
+  `email` VARCHAR(145) NOT NULL,
+  `nombre` VARCHAR(45) NULL,
+  `apellido` VARCHAR(45) NULL,
+  `fkrol` INT NOT NULL,
+  `telefono` VARCHAR(345) NULL,
+  `estado` INT NULL,
+  `ultimaConexion` DATETIME NULL,
+  `ip` VARCHAR(245) NULL,
+  `habilitado` INT NULL,
+  `fkcliente` INT NOT NULL,
+  `fkdomicilio` INT NOT NULL,
+  PRIMARY KEY (`idusuario`),
+  INDEX `fkdomicilio_idx` (`fkdomicilio` ASC),
+  INDEX `fkcliente_idx` (`fkcliente` ASC),
+  INDEX `fkrol_idx` (`fkrol` ASC),
+  /*CONSTRAINT `fkdomicilio`
+    FOREIGN KEY (`fkdomicilio`)
+    REFERENCES `ecommercedb`.`domicilio` (`iddomicilio`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,*/
+  CONSTRAINT `fkcliente`
+    FOREIGN KEY (`fkcliente`)
+    REFERENCES `ecommercedb`.`cliente` (`idcliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fkrol`
+    FOREIGN KEY (`fkrol`)
+    REFERENCES `ecommercedb`.`rol` (`idrol`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
+CREATE TABLE IF NOT EXISTS `ecommercedb`.`movimiento` (
+  `idmovimiento` INT NOT NULL AUTO_INCREMENT,
+  `monto` DECIMAL NOT NULL,
+  `fecha` DATETIME NOT NULL,
+  `tipo` VARCHAR(45) NULL,
+  `liquidado` INT NULL,
+  `fechaLiquidado` DATE NULL,
+  `fkusuario` INT NOT NULL,
+  `fkcliente` INT NOT NULL,
+  PRIMARY KEY (`idmovimiento`),
+  INDEX `fkcliente_idx` (`fkcliente` ASC),
+  INDEX `fkusuario_idx` (`fkusuario` ASC),
+ /* CONSTRAINT `fkcliente`
+    FOREIGN KEY (`fkcliente`)
+    REFERENCES `ecommercedb`.`cliente` (`idcliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,*/
+  CONSTRAINT `fkusuario`
+    FOREIGN KEY (`fkusuario`)
+    REFERENCES `ecommercedb`.`usuario` (`idusuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+CREATE TABLE IF NOT EXISTS `ecommercedb`.`pedido` (
+  `idpedido` INT NOT NULL AUTO_INCREMENT,
+  `fechaHoraGenerado` DATETIME NOT NULL,
+  `montoTotal` DECIMAL NOT NULL,
+  `fkcliente` INT NOT NULL,
+  `fkusuario` INT NOT NULL,
+  `fechaHoraEntregado` DATETIME NULL,
+  `fechaHoraSalida` DATETIME NULL,
+  PRIMARY KEY (`idpedido`),
+  INDEX `fkcliente_idx` (`fkcliente` ASC),
+  INDEX `fkusuario_idx` (`fkusuario` ASC)
+  /*CONSTRAINT `fkcliente`
+    FOREIGN KEY (`fkcliente`)
+    REFERENCES `ecommercedb`.`cliente` (`idcliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fkusuario`
+    FOREIGN KEY (`fkusuario`)
+    REFERENCES `ecommercedb`.`usuario` (`idusuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION*/);
+
+CREATE TABLE IF NOT EXISTS `ecommercedb`.`producto` (
+  `idproducto` INT NOT NULL AUTO_INCREMENT,
+  `fkcategoria` INT NOT NULL,
+  `fksubCategoria` INT NULL,
+  `imagen` VARCHAR(545) NOT NULL,
+  `ofertado` INT NULL,
+  `descripcion` VARCHAR(445) NULL,
+  `precio` DECIMAL NOT NULL,
+  `precioAnterior` DECIMAL NULL,
+  `porcentajeDescuento` INT NULL,
+  `fkcliente` INT NOT NULL,
+  `stock` DOUBLE NOT NULL,
+  `fkunidadVenta` INT NOT NULL,
+  PRIMARY KEY (`idproducto`),
+  INDEX `fkcategoria_idx` (`fkcategoria` ASC),
+  INDEX `fksubCategoria_idx` (`fksubCategoria` ASC),
+  INDEX `fkcliente_idx` (`fkcliente` ASC),
+  INDEX `fkunidadVenta_idx` (`fkunidadVenta` ASC),
+  CONSTRAINT `fkcategoria`
+    FOREIGN KEY (`fkcategoria`)
+    REFERENCES `ecommercedb`.`categoria` (`idcategoria`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fksubCategoria`
+    FOREIGN KEY (`fksubCategoria`)
+    REFERENCES `ecommercedb`.`subCategoria` (`idsubCategoria`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+ /* CONSTRAINT `fkcliente`
+    FOREIGN KEY (`fkcliente`)
+    REFERENCES `ecommercedb`.`cliente` (`idcliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,*/
+  CONSTRAINT `fkunidadVenta`
+    FOREIGN KEY (`fkunidadVenta`)
+    REFERENCES `ecommercedb`.`unidadVenta` (`idunidadVenta`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+CREATE TABLE IF NOT EXISTS `ecommercedb`.`producto_has_pedido` (
+  `idproducto_has_pedido` INT NOT NULL AUTO_INCREMENT,
+  `fkproducto` INT NOT NULL,
+  `fkpedido` INT NOT NULL,
+  PRIMARY KEY (`idproducto_has_pedido`),
+  INDEX `fkpedido_idx` (`fkpedido` ASC),
+  INDEX `fkproducto_idx` (`fkproducto` ASC),
+  CONSTRAINT `fkpedido`
+    FOREIGN KEY (`fkpedido`)
+    REFERENCES `ecommercedb`.`pedido` (`idpedido`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fkproducto`
+    FOREIGN KEY (`fkproducto`)
+    REFERENCES `ecommercedb`.`producto` (`idproducto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
