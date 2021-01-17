@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ControladorAdminCliente;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControladorAdminHome;
 use App\Http\Controllers\ControladorAdminPerfil;
@@ -24,5 +25,7 @@ Route::group(array('domain'=>'127.0.0.1'),function () {
 
     Route::get('/admin/productos', [ControladorAdminProducto::class, 'index']);
     Route::get('/admin/productos/cargarGrilla', [ControladorAdminProducto::class, 'cargarGrilla'])->name('productos.cargarGrilla');
+
+    Route::get('/admin/clientes', [ControladorAdminCliente::class, 'index']);
   
   });
