@@ -25,6 +25,7 @@ Route::group(array('domain'=>'127.0.0.1'),function () {
 
     Route::get('/admin/productos', [ControladorAdminProducto::class, 'index']);
     Route::get('/admin/productos/cargarGrilla', [ControladorAdminProducto::class, 'cargarGrilla'])->name('productos.cargarGrilla');
+    Route::get('/admin/producto/nuevo', [ControladorAdminProducto::class, 'nuevo']);
 
     Route::get('/admin/clientes', [ControladorAdminCliente::class, 'index']);
   

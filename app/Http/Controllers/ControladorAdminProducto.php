@@ -14,6 +14,12 @@ class ControladorAdminProducto extends Controller {
         return view('sistema.producto-listar', compact('titulo', 'currentlyPage'));
     }
 
+    public function nuevo() {
+        $titulo = "Registrar producto";
+        $currentlyPage = "productos";
+        return view('sistema.producto-nuevo', compact('titulo', 'currentlyPage'));
+    }
+
     public function cargarGrilla(Request $request) {
         $request = $_REQUEST;
 

@@ -307,6 +307,7 @@
 					</ul>
 				</div>
 			</nav>
+			
 
 			@yield('breadcrumb')
 			<main class="content">
